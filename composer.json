@@ -6,6 +6,11 @@
             "email": "douma@live.nl"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Diamond\\": "src"
+        }
+    },
     "require": {
         "phpunit/phpunit": "^8.2"
     }
