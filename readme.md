@@ -59,7 +59,7 @@ E·······E
 
 `number of outside dots = number_of_letters - (index + 1)`
 
-### Formula total chars
+### Formula total chars based on first char 
 
 `total chars = number of outside dots first char + number of outside dots first char + 1`
 
