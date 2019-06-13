@@ -1,0 +1,12 @@
+{
+    "name": "douma/php-diamond",
+    "authors": [
+        {
+            "name": "Stefan Douma",
+            "email": "douma@live.nl"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^8.2"
+    }
+}
