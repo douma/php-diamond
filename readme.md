@@ -50,3 +50,22 @@ E·······E
 ···B·B···
 ····A····
 ```
+
+# Solution
+
+## Formula's
+
+### Formula for outside dots
+
+`number of outside dots = number_of_letters - (index + 1)`
+
+### Formula total chars
+
+`total chars = number of outside dots first char + number of outside dots first char + 1`
+
+### Formula for middle dots
+
+```
+number of middle dots = total chars - 2 - total number of outside dots 
+number of middle dots = number of middle dots < 0 ? 0 : number of middle dots 
+```
