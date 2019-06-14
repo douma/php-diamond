@@ -30,4 +30,44 @@ class Diamond
     {
         return range('A',$letter);
     }
+
+    public function output(string $letter) : string
+    {
+        $letters = $this->listOfLetters($letter);
+        $numberOfLetters = count($letters);
+        $output = "";
+        foreach($letters as $index=>$letter) {
+            $output .= $this->outputLetter($index, $letter, $numberOfLetters);
+        }
+        $reversed = $letters;
+        $reversed = array_reverse($reversed,true);
+        unset($reversed[count($reversed) -1]);
+        foreach($reversed as $index=>$letter) {
+            $output .= $this->outputLetter($index, $letter, $numberOfLetters);
+        }
+        return $output;
+    }
+
+    private function outputLetter(int $index, string $letter, int $numberOfLetters) : string
+    {
+        $numberOfMiddleDots = $this->numberOfMiddleDots($index, $numberOfLetters);
+        $numberOfOutsideDots = $this->numberOfOutsideDots($index, $numberOfLetters);
+
+        $output = "";
+        for($x = 0;$x<$numberOfOutsideDots;$x++) {
+            $output .= "·";
+        }
+        $output .= $letter;
+        if($numberOfMiddleDots > 0) {
+            for($x = 0;$x<$numberOfMiddleDots;$x++) {
+                $output .= "·";
+            }
+            $output .= $letter;
+        }
+        for($x = 0;$x<$numberOfOutsideDots;$x++) {
+            $output .= "·";
+        }
+        $output .= PHP_EOL;
+        return $output;
+    }
 }

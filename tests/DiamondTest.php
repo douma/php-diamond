@@ -9,6 +9,7 @@ final class DiamondTest extends TestCase
     public function test_number_of_outside_dots(): void
     {
         $diamond = new Diamond;
+        $this->assertEquals(1,$diamond->numberOfOutsideDots(0, 2));
         $this->assertEquals(4,$diamond->numberOfOutsideDots(0, 5));
         $this->assertEquals(3,$diamond->numberOfOutsideDots(1, 5));
         $this->assertEquals(2,$diamond->numberOfOutsideDots(2, 5));
@@ -47,5 +48,25 @@ final class DiamondTest extends TestCase
         $this->assertEquals(['A','B','C'],$diamond->listOfLetters('C'));
         $this->assertEquals(['A','B','C','D'],$diamond->listOfLetters('D'));
         $this->assertEquals(['A','B','C','D','E'],$diamond->listOfLetters('E'));
+    }
+
+    public function test_print()
+    {
+        $diamond = new Diamond;
+        $output = "·A·" . PHP_EOL .
+                "B·B" . PHP_EOL .
+                "·A·" . PHP_EOL;
+        $this->assertEquals($output, $diamond->output('B'));
+
+        $output = "····A····" . PHP_EOL .
+                "···B·B···" . PHP_EOL .
+                "··C···C··" . PHP_EOL .
+                "·D·····D·" . PHP_EOL .
+                "E·······E" . PHP_EOL .
+                "·D·····D·" . PHP_EOL .
+                "··C···C··" . PHP_EOL .
+                "···B·B···" . PHP_EOL .
+                "····A····" . PHP_EOL;
+        $this->assertEquals($output, $diamond->output('E'));
     }
 }
