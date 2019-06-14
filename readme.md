@@ -36,7 +36,7 @@ K···················K
 ··········A··········
 ```
 
-## Exersize 
+## Exercise 
 
 https://exercism.io/my/solutions/8a93421d445a4806874f9e0b3757ad2f
 
